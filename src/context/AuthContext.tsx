@@ -23,14 +23,14 @@ const USERS: User[] = [
     username: 'principal',
     password: 'principal123',
     role: 'principal',
-    name: 'Principal User'
+    name: 'Principal'
   },
   {
     id: '2',
     username: 'hod',
     password: 'hod123',
     role: 'hod',
-    name: 'HOD User'
+    name: 'HOD'
   }
 ];
 

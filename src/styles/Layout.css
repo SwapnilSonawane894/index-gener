@@ -7,7 +7,7 @@
 
 /* Sidebar Styles - Microsoft Fluent Design */
 .sidebar {
-  width: 120px;
+  width: 100px;
   background: #FFFFFF;
   border-right: 1px solid #EDEBE9;
   display: flex;
@@ -38,7 +38,7 @@
 }
 
 .sidebar-header {
-  padding: 24px 12px;
+  padding: 24px 8px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -81,6 +81,7 @@
   padding: 12px 8px;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 8px;
   overflow-y: auto;
   overflow-x: hidden;
@@ -145,6 +146,8 @@
 .sidebar-footer {
   padding: 8px;
   flex-shrink: 0;
+  display: flex;
+  justify-content: center;
 }
 
 .logout-btn {
