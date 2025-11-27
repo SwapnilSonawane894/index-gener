@@ -1,0 +1,283 @@
+.success-index-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 1400px;
+}
+
+.success-index-header {
+  margin-bottom: 8px;
+}
+
+.page-subtitle {
+  font-size: 20px;
+  font-weight: 600;
+  color: #323130;
+  margin: 0 0 8px 0;
+}
+
+.page-description {
+  font-size: 14px;
+  color: #605E5C;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Upload Sections */
+.upload-sections {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.upload-card {
+  background: #FFFFFF;
+  border: 1px solid #EDEBE9;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: border-color 0.15s ease;
+}
+
+.upload-card:hover {
+  border-color: #C8C6C4;
+}
+
+.card-header {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.card-icon {
+  width: 48px;
+  height: 48px;
+  background: #F3F2F1;
+  border: 1px solid #EDEBE9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0078D4;
+  flex-shrink: 0;
+}
+
+.card-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #323130;
+  margin: 0 0 4px 0;
+}
+
+.card-description {
+  font-size: 13px;
+  color: #605E5C;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Upload Area */
+.upload-area {
+  background: #FAF9F8;
+  border: 2px dashed #C8C6C4;
+  padding: 32px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 180px;
+  transition: all 0.15s ease;
+}
+
+.upload-area:hover {
+  border-color: #0078D4;
+  background: #F3F2F1;
+}
+
+.upload-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+}
+
+.upload-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: #0078D4;
+  color: #FFFFFF;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.upload-button:hover {
+  background: #106EBE;
+}
+
+.upload-button:active {
+  background: #005A9E;
+}
+
+.upload-hint {
+  font-size: 13px;
+  color: #605E5C;
+  margin: 0;
+}
+
+.file-format {
+  font-size: 12px;
+  color: #8A8886;
+  margin: 0;
+}
+
+/* File Selected */
+.file-selected {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 16px;
+  background: #FFFFFF;
+  border: 1px solid #EDEBE9;
+}
+
+.file-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #0078D4;
+}
+
+.file-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: #323130;
+}
+
+.remove-button {
+  padding: 8px 16px;
+  background: transparent;
+  color: #A4262C;
+  border: 1px solid #A4262C;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.remove-button:hover {
+  background: #A4262C;
+  color: #FFFFFF;
+}
+
+/* File Requirements */
+.file-requirements {
+  padding: 16px;
+  background: #F3F2F1;
+  border: 1px solid #EDEBE9;
+}
+
+.requirement-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #323130;
+  margin: 0 0 8px 0;
+}
+
+.requirement-list {
+  margin: 0;
+  padding-left: 20px;
+  font-size: 13px;
+  color: #605E5C;
+  line-height: 1.6;
+}
+
+.requirement-list li {
+  margin-bottom: 4px;
+}
+
+/* Action Footer */
+.action-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 24px;
+  background: #F3F2F1;
+  border: 1px solid #EDEBE9;
+}
+
+.process-button {
+  padding: 12px 32px;
+  background: #0078D4;
+  color: #FFFFFF;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.process-button:hover:not(:disabled) {
+  background: #106EBE;
+}
+
+.process-button:active:not(:disabled) {
+  background: #005A9E;
+}
+
+.process-button:disabled {
+  background: #C8C6C4;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.footer-note {
+  font-size: 12px;
+  color: #8A8886;
+  margin: 0;
+  text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .upload-sections {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .upload-card {
+    padding: 16px;
+  }
+
+  .card-header {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .upload-area {
+    padding: 24px 16px;
+    min-height: 160px;
+  }
+
+  .upload-button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .file-selected {
+    flex-direction: column;
+    gap: 12px;
+    align-items: stretch;
+  }
+
+  .remove-button {
+    width: 100%;
+  }
+}

@@ -4,11 +4,10 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import { 
   LayoutDashboard, 
   Building2, 
-  GraduationCap, 
+  TrendingUp, 
   LogOut, 
   ChevronLeft, 
-  ChevronRight,
-  X
+  ChevronRight
 } from 'lucide-react';
 import '../styles/Layout.css';
 
@@ -36,7 +35,7 @@ export default function Layout({ children }: LayoutProps) {
     } else if (user?.role === 'hod') {
       return [
         { icon: LayoutDashboard, label: 'Dashboard', path: '/dashboard' },
-        { icon: GraduationCap, label: 'Academics', path: '/academics' }
+        { icon: TrendingUp, label: 'Success Index', path: '/success-index' }
       ];
     }
     return [];
@@ -48,7 +47,7 @@ export default function Layout({ children }: LayoutProps) {
     const currentPath = location.pathname;
     if (currentPath === '/dashboard') return 'Dashboard';
     if (currentPath === '/departments') return 'Departments';
-    if (currentPath === '/academics') return 'Academics';
+    if (currentPath === '/success-index') return 'Success Index';
     return 'Dashboard';
   };
 
@@ -63,11 +62,11 @@ export default function Layout({ children }: LayoutProps) {
           </div>
           {!sidebarCollapsed && (
             <button 
-              className="close-btn"
+              className="collapse-btn"
               onClick={() => setSidebarCollapsed(true)}
               data-testid="collapse-sidebar-button"
             >
-              <X size={20} />
+              <ChevronLeft size={18} />
             </button>
           )}
         </div>
@@ -81,11 +80,10 @@ export default function Layout({ children }: LayoutProps) {
                 key={item.path}
                 className={`nav-item ${isActive ? 'active' : ''}`}
                 onClick={() => navigate(item.path)}
-                data-testid={`nav-${item.label.toLowerCase()}`}
+                data-testid={`nav-${item.label.toLowerCase().replace(' ', '-')}`}
               >
                 <Icon size={20} />
                 {!sidebarCollapsed && <span>{item.label}</span>}
-                {!sidebarCollapsed && isActive && <ChevronRight size={16} />}
               </button>
             );
           })}
@@ -108,7 +106,7 @@ export default function Layout({ children }: LayoutProps) {
             onClick={() => setSidebarCollapsed(false)}
             data-testid="expand-sidebar-button"
           >
-            <ChevronRight size={20} />
+            <ChevronRight size={18} />
           </button>
         )}
       </aside>
@@ -118,19 +116,13 @@ export default function Layout({ children }: LayoutProps) {
         <header className="page-header">
           <div className="page-title">
             <h1 data-testid="page-title">{getPageTitle()}</h1>
-            <button 
-              className="breadcrumb-btn"
-              onClick={() => navigate('/dashboard')}
-            >
-              {getPageTitle()} <ChevronRight size={16} />
-            </button>
           </div>
           <div className="user-info">
-            <div className="user-avatar">{user?.name.charAt(0)}</div>
             <div className="user-details">
               <div className="user-name">{user?.name}</div>
               <div className="user-role">{user?.role.toUpperCase()}</div>
             </div>
+            <div className="user-avatar">{user?.name.charAt(0)}</div>
           </div>
         </header>
 

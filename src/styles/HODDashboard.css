@@ -1,35 +1,170 @@
 .hod-dashboard-container {
   display: flex;
   flex-direction: column;
+  gap: 32px;
+  max-width: 100%;
+}
+
+/* Section Headers */
+.section-header {
+  margin-bottom: 16px;
+}
+
+.section-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #323130;
+  margin: 0 0 4px 0;
+}
+
+.section-description {
+  font-size: 13px;
+  color: #605E5C;
+  margin: 0;
+}
+
+/* Previous Year Success Index Section */
+.success-index-section {
+  background: #FFFFFF;
+  border: 1px solid #EDEBE9;
+  padding: 24px;
+}
+
+.success-table-wrapper {
+  overflow-x: auto;
+  border: 1px solid #EDEBE9;
+}
+
+.success-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 700px;
+}
+
+.success-table thead {
+  background: #F3F2F1;
+  border-bottom: 2px solid #EDEBE9;
+}
+
+.success-table th {
+  padding: 12px 16px;
+  text-align: left;
+  font-size: 13px;
+  font-weight: 600;
+  color: #323130;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.success-table tbody tr {
+  border-bottom: 1px solid #EDEBE9;
+  transition: background 0.15s ease;
+}
+
+.success-table tbody tr:hover {
+  background: #FAF9F8;
+}
+
+.success-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.success-table td {
+  padding: 14px 16px;
+  font-size: 14px;
+  color: #323130;
+}
+
+.year-col {
+  font-weight: 600;
+  color: #0078D4;
+}
+
+.total-col {
+  font-weight: 500;
+}
+
+.pass-col {
+  color: #107C10;
+  font-weight: 500;
+}
+
+.fail-col {
+  color: #A4262C;
+  font-weight: 500;
+}
+
+.rate-col {
+  font-weight: 600;
+}
+
+.rate-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  font-size: 13px;
+  font-weight: 600;
+  border: 1px solid;
+}
+
+.rate-badge.excellent {
+  background: #DFF6DD;
+  color: #107C10;
+  border-color: #107C10;
+}
+
+.rate-badge.good {
+  background: #FFF4CE;
+  color: #CA5010;
+  border-color: #CA5010;
+}
+
+.rate-badge.average {
+  background: #FDE7E9;
+  color: #A4262C;
+  border-color: #A4262C;
+}
+
+.avg-col {
+  color: #605E5C;
+  font-weight: 500;
+}
+
+/* Current Semester Section */
+.current-semester-section {
+  display: flex;
+  flex-direction: column;
   gap: 20px;
 }
 
 /* Filters Section */
 .filters-section {
-  background: white;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  border: 1px solid #f0f0f0;
+  background: #FFFFFF;
+  padding: 16px;
+  border: 1px solid #EDEBE9;
   display: flex;
-  gap: 16px;
+  gap: 12px;
   flex-wrap: wrap;
 }
 
 .search-box {
   flex: 1;
-  min-width: 300px;
+  min-width: 280px;
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 12px 16px;
-  background: #f8f9fa;
-  border: 1px solid #e0e0e0;
-  border-radius: 8px;
+  gap: 10px;
+  padding: 10px 12px;
+  background: #FAF9F8;
+  border: 1px solid #EDEBE9;
+  transition: border-color 0.15s ease;
+}
+
+.search-box:focus-within {
+  border-color: #0078D4;
+  background: #FFFFFF;
 }
 
 .search-box svg {
-  color: #666;
+  color: #605E5C;
   flex-shrink: 0;
 }
 
@@ -39,12 +174,12 @@
   background: none;
   outline: none;
   font-size: 14px;
-  color: #1a1a1a;
+  color: #323130;
 }
 
 .filter-controls {
   display: flex;
-  gap: 12px;
+  gap: 8px;
   flex-wrap: wrap;
 }
 
@@ -52,45 +187,45 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  padding: 12px 16px;
-  background: white;
-  border: 1px solid #e0e0e0;
-  border-radius: 8px;
-  font-size: 14px;
-  color: #666;
+  padding: 10px 14px;
+  background: #FFFFFF;
+  border: 1px solid #EDEBE9;
+  font-size: 13px;
+  color: #323130;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: all 0.15s ease;
+  font-weight: 400;
 }
 
 .filter-btn:hover {
-  border-color: #667eea;
-  color: #667eea;
-  background: rgba(102, 126, 234, 0.05);
+  border-color: #0078D4;
+  color: #0078D4;
+  background: #F3F2F1;
 }
 
 .semester-select {
-  padding: 12px 16px;
-  border: 1px solid #e0e0e0;
-  border-radius: 8px;
-  font-size: 14px;
-  color: #1a1a1a;
-  background: white;
+  padding: 10px 14px;
+  border: 1px solid #EDEBE9;
+  font-size: 13px;
+  color: #323130;
+  background: #FFFFFF;
   cursor: pointer;
   outline: none;
-  transition: all 0.2s;
+  transition: all 0.15s ease;
+}
+
+.semester-select:hover {
+  border-color: #C8C6C4;
 }
 
 .semester-select:focus {
-  border-color: #667eea;
-  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+  border-color: #0078D4;
 }
 
 /* Table Styles */
 .table-wrapper {
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  border: 1px solid #f0f0f0;
+  background: #FFFFFF;
+  border: 1px solid #EDEBE9;
   overflow: hidden;
 }
 
@@ -106,55 +241,63 @@
 }
 
 .hod-table thead {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
+  background: #0078D4;
+  color: #FFFFFF;
   position: sticky;
   top: 0;
   z-index: 10;
 }
 
 .hod-table th {
-  padding: 14px 12px;
+  padding: 12px 14px;
   text-align: left;
   font-size: 12px;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.3px;
   white-space: nowrap;
 }
 
 .hod-table tbody tr {
-  border-bottom: 1px solid #f0f0f0;
-  transition: background 0.2s;
+  border-bottom: 1px solid #EDEBE9;
+  transition: background 0.15s ease;
 }
 
 .hod-table tbody tr:hover {
-  background: #f8f9fa;
+  background: #FAF9F8;
+}
+
+.hod-table tbody tr:last-child {
+  border-bottom: none;
 }
 
 .hod-table td {
-  padding: 14px 12px;
+  padding: 12px 14px;
   font-size: 13px;
-  color: #1a1a1a;
+  color: #323130;
   white-space: nowrap;
 }
 
 .sticky-col {
   position: sticky;
   left: 0;
-  background: white;
+  background: #FFFFFF;
   z-index: 5;
-  box-shadow: 2px 0 4px rgba(0, 0, 0, 0.05);
+  border-right: 1px solid #EDEBE9;
 }
 
 .hod-table thead .sticky-col {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: #0078D4;
   z-index: 15;
+}
+
+.hod-table tbody tr:hover .sticky-col {
+  background: #FAF9F8;
 }
 
 .enrollment-col {
   font-weight: 600;
-  color: #667eea;
+  color: #0078D4;
 }
 
 .name-col {
@@ -163,64 +306,64 @@
 
 /* Score Color Coding */
 .score-high {
-  background: #e8f5e9;
-  color: #2e7d32;
+  background: #DFF6DD;
+  color: #107C10;
   font-weight: 600;
   text-align: center;
 }
 
 .score-medium {
-  background: #fff8e1;
-  color: #f57c00;
+  background: #FFF4CE;
+  color: #CA5010;
   font-weight: 600;
   text-align: center;
 }
 
 .score-low {
-  background: #ffebee;
-  color: #c62828;
+  background: #FDE7E9;
+  color: #A4262C;
   font-weight: 600;
   text-align: center;
 }
 
 .total-col {
   font-weight: 700;
-  color: #1a1a1a;
-  background: #f0f2f5;
+  color: #323130;
+  background: #F3F2F1;
 }
 
 .percentage-col {
   font-weight: 700;
-  color: #667eea;
+  color: #0078D4;
 }
 
 .result-badge {
-  padding: 6px 12px;
-  border-radius: 6px;
+  padding: 5px 10px;
   font-size: 11px;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.3px;
   display: inline-block;
+  border: 1px solid;
 }
 
 .result-badge.pass {
-  background: #e8f5e9;
-  color: #2e7d32;
+  background: #DFF6DD;
+  color: #107C10;
+  border-color: #107C10;
 }
 
 .result-badge.fail {
-  background: #ffebee;
-  color: #c62828;
+  background: #FDE7E9;
+  color: #A4262C;
+  border-color: #A4262C;
 }
 
 /* Summary Stats */
 .summary-stats {
-  background: white;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  border: 1px solid #f0f0f0;
+  background: #FFFFFF;
+  padding: 20px 24px;
+  border: 1px solid #EDEBE9;
   display: flex;
   gap: 32px;
   flex-wrap: wrap;
@@ -233,23 +376,23 @@
 }
 
 .stat-label {
-  font-size: 14px;
-  color: #666;
-  font-weight: 500;
+  font-size: 13px;
+  color: #605E5C;
+  font-weight: 400;
 }
 
 .stat-value {
-  font-size: 20px;
-  font-weight: 700;
-  color: #1a1a1a;
+  font-size: 18px;
+  font-weight: 600;
+  color: #323130;
 }
 
 .stat-value.pass {
-  color: #2e7d32;
+  color: #107C10;
 }
 
 .stat-value.fail {
-  color: #c62828;
+  color: #A4262C;
 }
 
 /* Responsive Design */
@@ -269,5 +412,10 @@
   .filter-btn,
   .semester-select {
     flex: 1;
+  }
+  
+  .success-index-section,
+  .current-semester-section {
+    padding: 16px;
   }
 }

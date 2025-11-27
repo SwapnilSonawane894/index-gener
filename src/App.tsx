@@ -5,7 +5,7 @@ import Layout from './components/Layout';
 import PrincipalDashboard from './pages/PrincipalDashboard';
 import Departments from './pages/Departments';
 import HODDashboard from './pages/HODDashboard';
-import Academics from './pages/Academics';
+import SuccessIndex from './pages/SuccessIndex';
 import './App.css';
 
 function ProtectedRoute({ children, allowedRole }: { children: React.ReactNode; allowedRole?: string }) {
@@ -58,11 +58,11 @@ function AppRoutes() {
         }
       />
       <Route
-        path="/academics"
+        path="/success-index"
         element={
           <ProtectedRoute allowedRole="hod">
             <Layout>
-              <Academics />
+              <SuccessIndex />
             </Layout>
           </ProtectedRoute>
         }
