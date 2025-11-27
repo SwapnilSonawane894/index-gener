@@ -1,0 +1,360 @@
+.settings-container {
+  padding: 32px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.settings-title {
+  margin: 0 0 32px 0;
+  font-size: 24px;
+  font-weight: 600;
+  color: #323130;
+}
+
+.settings-section {
+  background: #FFFFFF;
+  border-radius: 8px;
+  border: 1px solid #EDEBE9;
+  margin-bottom: 24px;
+  padding: 24px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+.settings-section-title {
+  margin: 0 0 20px 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #323130;
+}
+
+/* Account Information */
+.account-info {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.info-row {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.info-label {
+  font-size: 13px;
+  color: #605E5C;
+  font-weight: 500;
+}
+
+.info-value {
+  font-size: 14px;
+  color: #323130;
+  font-weight: 500;
+}
+
+/* Password Form */
+.password-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #323130;
+}
+
+.password-input-wrapper {
+  position: relative;
+}
+
+.password-input {
+  width: 100%;
+  padding: 10px 40px 10px 12px;
+  border: 1px solid #EDEBE9;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: all 0.15s ease;
+  outline: none;
+  background: #FFFFFF;
+  color: #323130;
+}
+
+.password-input:focus {
+  border-color: #0078D4;
+  box-shadow: 0 0 0 1px #0078D4;
+}
+
+.password-input:hover {
+  border-color: #C8C6C4;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #605E5C;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.15s ease;
+  border-radius: 4px;
+}
+
+.password-toggle:hover {
+  color: #323130;
+  background: #F3F2F1;
+}
+
+.update-password-btn {
+  width: 100%;
+  padding: 12px 24px;
+  background: #0078D4;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.update-password-btn:hover {
+  background: #106EBE;
+}
+
+.update-password-btn:active {
+  background: #005A9E;
+}
+
+/* Theme Settings */
+.theme-options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.theme-option {
+  width: 100%;
+  padding: 16px !important;
+  background: #FAF9F8 !important;
+  border: 1px solid #EDEBE9 !important;
+  border-radius: 8px !important;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  font-weight: 400 !important;
+}
+
+.theme-option:hover {
+  background: #FFFFFF !important;
+  border-color: #EDEBE9 !important;
+}
+
+.theme-option.active {
+  border-color: #0078D4 !important;
+  background: #F3F9FD !important;
+}
+
+.theme-option-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #323130;
+  margin-bottom: 4px;
+}
+
+.theme-option-description {
+  font-size: 13px;
+  color: #605E5C;
+}
+
+/* Dark Mode - Class-based (manual theme selection) */
+html.dark .settings-title,
+:root.dark .settings-title {
+  color: #FFFFFF;
+}
+
+html.dark .settings-section,
+:root.dark .settings-section {
+  background: #292929;
+  border-color: #3B3B3B;
+}
+
+html.dark .settings-section-title,
+:root.dark .settings-section-title {
+  color: #FFFFFF;
+}
+
+html.dark .info-label,
+:root.dark .info-label {
+  color: #A19F9D;
+}
+
+html.dark .info-value,
+:root.dark .info-value {
+  color: #F3F2F1;
+}
+
+html.dark .form-label,
+:root.dark .form-label {
+  color: #F3F2F1;
+}
+
+html.dark .password-input,
+:root.dark .password-input {
+  background: #292929;
+  border-color: #3B3B3B;
+  color: #F3F2F1;
+}
+
+html.dark .password-input:hover,
+:root.dark .password-input:hover {
+  border-color: #484644;
+}
+
+html.dark .password-toggle,
+:root.dark .password-toggle {
+  color: #A19F9D;
+}
+
+html.dark .password-toggle:hover,
+:root.dark .password-toggle:hover {
+  color: #F3F2F1;
+  background: #3B3B3B;
+}
+
+html.dark .theme-option,
+:root.dark .theme-option {
+  background: #3B3B3B !important;
+  border-color: #3B3B3B !important;
+}
+
+html.dark .theme-option:hover,
+:root.dark .theme-option:hover {
+  background: #292929 !important;
+  border-color: #3B3B3B !important;
+}
+
+html.dark .theme-option.active,
+:root.dark .theme-option.active {
+  background: #1A3A52 !important;
+  border-color: #0078D4 !important;
+}
+
+html.dark .theme-option-title,
+:root.dark .theme-option-title {
+  color: #F3F2F1;
+}
+
+html.dark .theme-option-description,
+:root.dark .theme-option-description {
+  color: #A19F9D;
+}
+
+/* Dark Mode - System preference fallback */
+@media (prefers-color-scheme: dark) {
+  html:not(.light) .settings-title,
+  :root:not(.light) .settings-title {
+    color: #FFFFFF;
+  }
+
+  html:not(.light) .settings-section,
+  :root:not(.light) .settings-section {
+    background: #292929;
+    border-color: #3B3B3B;
+  }
+
+  html:not(.light) .settings-section-title,
+  :root:not(.light) .settings-section-title {
+    color: #FFFFFF;
+  }
+
+  html:not(.light) .info-label,
+  :root:not(.light) .info-label {
+    color: #A19F9D;
+  }
+
+  html:not(.light) .info-value,
+  :root:not(.light) .info-value {
+    color: #F3F2F1;
+  }
+
+  html:not(.light) .form-label,
+  :root:not(.light) .form-label {
+    color: #F3F2F1;
+  }
+
+  html:not(.light) .password-input,
+  :root:not(.light) .password-input {
+    background: #292929;
+    border-color: #3B3B3B;
+    color: #F3F2F1;
+  }
+
+  html:not(.light) .password-input:hover,
+  :root:not(.light) .password-input:hover {
+    border-color: #484644;
+  }
+
+  html:not(.light) .password-toggle,
+  :root:not(.light) .password-toggle {
+    color: #A19F9D;
+  }
+
+  html:not(.light) .password-toggle:hover,
+  :root:not(.light) .password-toggle:hover {
+    color: #F3F2F1;
+    background: #3B3B3B;
+  }
+
+  html:not(.light) .theme-option,
+  :root:not(.light) .theme-option {
+    background: #3B3B3B !important;
+    border-color: #3B3B3B !important;
+  }
+
+  html:not(.light) .theme-option:hover,
+  :root:not(.light) .theme-option:hover {
+    background: #292929 !important;
+    border-color: #3B3B3B !important;
+  }
+
+  html:not(.light) .theme-option.active,
+  :root:not(.light) .theme-option.active {
+    background: #1A3A52 !important;
+    border-color: #0078D4 !important;
+  }
+
+  html:not(.light) .theme-option-title,
+  :root:not(.light) .theme-option-title {
+    color: #F3F2F1;
+  }
+
+  html:not(.light) .theme-option-description,
+  :root:not(.light) .theme-option-description {
+    color: #A19F9D;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .settings-container {
+    padding: 20px;
+  }
+
+  .settings-title {
+    font-size: 20px;
+  }
+}

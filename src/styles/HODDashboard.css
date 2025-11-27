@@ -18,7 +18,7 @@
 }
 
 .section-description {
-  font-size: 13px;
+  font-size: 14px;
   color: #605E5C;
   margin: 0;
 }
@@ -27,12 +27,14 @@
 .success-index-section {
   background: #FFFFFF;
   border: 1px solid #EDEBE9;
+  border-radius: 8px;
   padding: 24px;
 }
 
 .success-table-wrapper {
   overflow-x: auto;
   border: 1px solid #EDEBE9;
+  border-radius: 8px;
 }
 
 .success-table {
@@ -103,6 +105,7 @@
   padding: 4px 10px;
   font-size: 13px;
   font-weight: 600;
+  border-radius: 6px;
   border: 1px solid;
 }
 
@@ -141,6 +144,7 @@
   background: #FFFFFF;
   padding: 16px;
   border: 1px solid #EDEBE9;
+  border-radius: 8px;
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
@@ -155,6 +159,7 @@
   padding: 10px 12px;
   background: #FAF9F8;
   border: 1px solid #EDEBE9;
+  border-radius: 6px;
   transition: border-color 0.15s ease;
 }
 
@@ -190,7 +195,8 @@
   padding: 10px 14px;
   background: #FFFFFF;
   border: 1px solid #EDEBE9;
-  font-size: 13px;
+  border-radius: 6px;
+  font-size: 14px;
   color: #323130;
   cursor: pointer;
   transition: all 0.15s ease;
@@ -206,7 +212,8 @@
 .semester-select {
   padding: 10px 14px;
   border: 1px solid #EDEBE9;
-  font-size: 13px;
+  border-radius: 6px;
+  font-size: 14px;
   color: #323130;
   background: #FFFFFF;
   cursor: pointer;
@@ -226,6 +233,7 @@
 .table-wrapper {
   background: #FFFFFF;
   border: 1px solid #EDEBE9;
+  border-radius: 8px;
   overflow: hidden;
 }
 
@@ -251,7 +259,7 @@
 .hod-table th {
   padding: 12px 14px;
   text-align: left;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.3px;
@@ -273,7 +281,7 @@
 
 .hod-table td {
   padding: 12px 14px;
-  font-size: 13px;
+  font-size: 14px;
   color: #323130;
   white-space: nowrap;
 }
@@ -339,12 +347,13 @@
 
 .result-badge {
   padding: 5px 10px;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.3px;
   display: inline-block;
   border: 1px solid;
+  border-radius: 6px;
 }
 
 .result-badge.pass {
@@ -364,6 +373,7 @@
   background: #FFFFFF;
   padding: 20px 24px;
   border: 1px solid #EDEBE9;
+  border-radius: 8px;
   display: flex;
   gap: 32px;
   flex-wrap: wrap;
@@ -376,7 +386,7 @@
 }
 
 .stat-label {
-  font-size: 13px;
+  font-size: 14px;
   color: #605E5C;
   font-weight: 400;
 }
@@ -393,6 +403,320 @@
 
 .stat-value.fail {
   color: #A4262C;
+}
+
+/* Dark Mode - Class-based (manual theme selection) */
+html.dark .section-title,
+:root.dark .section-title {
+  color: #F3F2F1;
+}
+
+html.dark .section-description,
+:root.dark .section-description {
+  color: #A19F9D;
+}
+
+html.dark .success-index-section,
+:root.dark .success-index-section,
+html.dark .filters-section,
+:root.dark .filters-section,
+html.dark .table-wrapper,
+:root.dark .table-wrapper,
+html.dark .summary-stats,
+:root.dark .summary-stats {
+  background: #292929;
+  border-color: #3B3B3B;
+}
+
+html.dark .success-table-wrapper,
+:root.dark .success-table-wrapper {
+  border-color: #3B3B3B;
+}
+
+html.dark .success-table thead,
+:root.dark .success-table thead {
+  background: #3B3B3B;
+  border-bottom-color: #484644;
+}
+
+html.dark .success-table th,
+:root.dark .success-table th {
+  color: #F3F2F1;
+}
+
+html.dark .success-table tbody tr,
+:root.dark .success-table tbody tr {
+  border-bottom-color: #3B3B3B;
+}
+
+html.dark .success-table tbody tr:hover,
+:root.dark .success-table tbody tr:hover {
+  background: #3B3B3B;
+}
+
+html.dark .success-table td,
+:root.dark .success-table td {
+  color: #F3F2F1;
+}
+
+html.dark .year-col,
+:root.dark .year-col {
+  color: #6CB4EE;
+}
+
+html.dark .avg-col,
+:root.dark .avg-col {
+  color: #A19F9D;
+}
+
+html.dark .search-box,
+:root.dark .search-box {
+  background: #3B3B3B;
+  border-color: #484644;
+}
+
+html.dark .search-box:focus-within,
+:root.dark .search-box:focus-within {
+  background: #3B3B3B;
+}
+
+html.dark .search-box svg,
+:root.dark .search-box svg {
+  color: #A19F9D;
+}
+
+html.dark .search-box input,
+:root.dark .search-box input {
+  color: #F3F2F1;
+}
+
+html.dark .filter-btn,
+:root.dark .filter-btn,
+html.dark .semester-select,
+:root.dark .semester-select {
+  background: #3B3B3B;
+  border-color: #484644;
+  color: #F3F2F1;
+}
+
+html.dark .filter-btn:hover,
+:root.dark .filter-btn:hover {
+  background: #484644;
+  border-color: #6CB4EE;
+  color: #6CB4EE;
+}
+
+html.dark .hod-table tbody tr,
+:root.dark .hod-table tbody tr {
+  border-bottom-color: #3B3B3B;
+}
+
+html.dark .hod-table tbody tr:hover,
+:root.dark .hod-table tbody tr:hover {
+  background: #3B3B3B;
+}
+
+html.dark .hod-table td,
+:root.dark .hod-table td {
+  color: #F3F2F1;
+}
+
+html.dark .sticky-col,
+:root.dark .sticky-col {
+  background: #292929;
+  border-right-color: #3B3B3B;
+}
+
+html.dark .hod-table thead .sticky-col,
+:root.dark .hod-table thead .sticky-col {
+  background: #0078D4;
+  z-index: 15;
+}
+
+html.dark .hod-table tbody tr:hover .sticky-col,
+:root.dark .hod-table tbody tr:hover .sticky-col {
+  background: #3B3B3B;
+}
+
+html.dark .enrollment-col,
+:root.dark .enrollment-col,
+html.dark .percentage-col,
+:root.dark .percentage-col {
+  color: #6CB4EE;
+}
+
+html.dark .total-col,
+:root.dark .total-col {
+  background: #3B3B3B;
+  color: #F3F2F1;
+}
+
+html.dark .stat-label,
+:root.dark .stat-label {
+  color: #A19F9D;
+}
+
+html.dark .stat-value,
+:root.dark .stat-value {
+  color: #F3F2F1;
+}
+
+/* Dark Mode - System preference fallback */
+@media (prefers-color-scheme: dark) {
+  html:not(.light) .section-title,
+  :root:not(.light) .section-title {
+    color: #F3F2F1;
+  }
+
+  html:not(.light) .section-description,
+  :root:not(.light) .section-description {
+    color: #A19F9D;
+  }
+
+  html:not(.light) .success-index-section,
+  :root:not(.light) .success-index-section,
+  html:not(.light) .filters-section,
+  :root:not(.light) .filters-section,
+  html:not(.light) .table-wrapper,
+  :root:not(.light) .table-wrapper,
+  html:not(.light) .summary-stats,
+  :root:not(.light) .summary-stats {
+    background: #292929;
+    border-color: #3B3B3B;
+  }
+
+  html:not(.light) .success-table-wrapper,
+  :root:not(.light) .success-table-wrapper {
+    border-color: #3B3B3B;
+  }
+
+  html:not(.light) .success-table thead,
+  :root:not(.light) .success-table thead {
+    background: #3B3B3B;
+    border-bottom-color: #484644;
+  }
+
+  html:not(.light) .success-table th,
+  :root:not(.light) .success-table th {
+    color: #F3F2F1;
+  }
+
+  html:not(.light) .success-table tbody tr,
+  :root:not(.light) .success-table tbody tr {
+    border-bottom-color: #3B3B3B;
+  }
+
+  html:not(.light) .success-table tbody tr:hover,
+  :root:not(.light) .success-table tbody tr:hover {
+    background: #3B3B3B;
+  }
+
+  html:not(.light) .success-table td,
+  :root:not(.light) .success-table td {
+    color: #F3F2F1;
+  }
+
+  html:not(.light) .year-col,
+  :root:not(.light) .year-col {
+    color: #6CB4EE;
+  }
+
+  html:not(.light) .avg-col,
+  :root:not(.light) .avg-col {
+    color: #A19F9D;
+  }
+
+  html:not(.light) .search-box,
+  :root:not(.light) .search-box {
+    background: #3B3B3B;
+    border-color: #484644;
+  }
+
+  html:not(.light) .search-box:focus-within,
+  :root:not(.light) .search-box:focus-within {
+    background: #3B3B3B;
+  }
+
+  html:not(.light) .search-box svg,
+  :root:not(.light) .search-box svg {
+    color: #A19F9D;
+  }
+
+  html:not(.light) .search-box input,
+  :root:not(.light) .search-box input {
+    color: #F3F2F1;
+  }
+
+  html:not(.light) .filter-btn,
+  :root:not(.light) .filter-btn,
+  html:not(.light) .semester-select,
+  :root:not(.light) .semester-select {
+    background: #3B3B3B;
+    border-color: #484644;
+    color: #F3F2F1;
+  }
+
+  html:not(.light) .filter-btn:hover,
+  :root:not(.light) .filter-btn:hover {
+    background: #484644;
+    border-color: #6CB4EE;
+    color: #6CB4EE;
+  }
+
+  html:not(.light) .hod-table tbody tr,
+  :root:not(.light) .hod-table tbody tr {
+    border-bottom-color: #3B3B3B;
+  }
+
+  html:not(.light) .hod-table tbody tr:hover,
+  :root:not(.light) .hod-table tbody tr:hover {
+    background: #3B3B3B;
+  }
+
+  html:not(.light) .hod-table td,
+  :root:not(.light) .hod-table td {
+    color: #F3F2F1;
+  }
+
+  html:not(.light) .sticky-col,
+  :root:not(.light) .sticky-col {
+    background: #292929;
+    border-right-color: #3B3B3B;
+  }
+
+  html:not(.light) .hod-table thead .sticky-col,
+  :root:not(.light) .hod-table thead .sticky-col {
+    background: #0078D4;
+    z-index: 15;
+  }
+
+  html:not(.light) .hod-table tbody tr:hover .sticky-col,
+  :root:not(.light) .hod-table tbody tr:hover .sticky-col {
+    background: #3B3B3B;
+  }
+
+  html:not(.light) .enrollment-col,
+  :root:not(.light) .enrollment-col,
+  html:not(.light) .percentage-col,
+  :root:not(.light) .percentage-col {
+    color: #6CB4EE;
+  }
+
+  html:not(.light) .total-col,
+  :root:not(.light) .total-col {
+    background: #3B3B3B;
+    color: #F3F2F1;
+  }
+
+  html:not(.light) .stat-label,
+  :root:not(.light) .stat-label {
+    color: #A19F9D;
+  }
+
+  html:not(.light) .stat-value,
+  :root:not(.light) .stat-value {
+    color: #F3F2F1;
+  }
 }
 
 /* Responsive Design */

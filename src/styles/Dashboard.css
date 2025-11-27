@@ -11,11 +11,11 @@
 }
 
 .dashboard-card {
-  background: white;
-  border-radius: 12px;
+  background: #FFFFFF;
+  border-radius: 8px;
   padding: 24px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  border: 1px solid #f0f0f0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  border: 1px solid #EDEBE9;
 }
 
 .chart-card {
@@ -26,14 +26,14 @@
   margin: 0 0 20px 0;
   font-size: 18px;
   font-weight: 600;
-  color: #1a1a1a;
+  color: #323130;
 }
 
 .chart-footer {
   margin-top: 16px;
   padding-top: 16px;
-  border-top: 1px solid #f0f0f0;
-  color: #666;
+  border-top: 1px solid #EDEBE9;
+  color: #605E5C;
   font-size: 13px;
 }
 
@@ -45,21 +45,21 @@
 }
 
 .subject-item {
-  padding: 14px 16px;
-  background: #f8f9fa;
-  border-radius: 8px;
-  border-left: 3px solid #667eea;
-  transition: all 0.2s;
+  padding: 12px 16px;
+  background: #FAF9F8;
+  border-radius: 6px;
+  border-left: 3px solid #0078D4;
+  transition: all 0.15s ease;
 }
 
 .subject-item:hover {
-  background: #f0f2f5;
+  background: #F3F2F1;
   transform: translateX(4px);
 }
 
 .subject-name {
   font-size: 14px;
-  color: #1a1a1a;
+  color: #323130;
   font-weight: 500;
 }
 
@@ -71,30 +71,30 @@
 }
 
 .stat-card {
-  background: white;
-  border-radius: 12px;
+  background: #FFFFFF;
+  border-radius: 8px;
   padding: 20px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  border: 1px solid #f0f0f0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  border: 1px solid #EDEBE9;
   display: flex;
   align-items: center;
   gap: 16px;
-  transition: all 0.2s;
+  transition: all 0.15s ease;
 }
 
 .stat-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
 }
 
 .stat-icon {
   width: 56px;
   height: 56px;
-  border-radius: 12px;
+  border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 24px;
+  color: #FFFFFF;
   flex-shrink: 0;
 }
 
@@ -105,14 +105,109 @@
 .stat-value {
   font-size: 28px;
   font-weight: 700;
-  color: #1a1a1a;
+  color: #323130;
   margin-bottom: 4px;
+  line-height: 1.2;
 }
 
 .stat-label {
   font-size: 13px;
-  color: #666;
+  color: #605E5C;
   font-weight: 500;
+}
+
+/* Dark Mode - Class-based (manual theme selection) */
+html.dark .dashboard-card,
+:root.dark .dashboard-card,
+html.dark .stat-card,
+:root.dark .stat-card {
+  background: #292929;
+  border-color: #3B3B3B;
+}
+
+html.dark .card-title,
+:root.dark .card-title {
+  color: #F3F2F1;
+}
+
+html.dark .chart-footer,
+:root.dark .chart-footer {
+  border-top-color: #3B3B3B;
+  color: #A19F9D;
+}
+
+html.dark .subject-item,
+:root.dark .subject-item {
+  background: #3B3B3B;
+  border-left-color: #6CB4EE;
+}
+
+html.dark .subject-item:hover,
+:root.dark .subject-item:hover {
+  background: #484644;
+}
+
+html.dark .subject-name,
+:root.dark .subject-name {
+  color: #F3F2F1;
+}
+
+html.dark .stat-value,
+:root.dark .stat-value {
+  color: #F3F2F1;
+}
+
+html.dark .stat-label,
+:root.dark .stat-label {
+  color: #A19F9D;
+}
+
+/* Dark Mode - System preference fallback */
+@media (prefers-color-scheme: dark) {
+  html:not(.light) .dashboard-card,
+  :root:not(.light) .dashboard-card,
+  html:not(.light) .stat-card,
+  :root:not(.light) .stat-card {
+    background: #292929;
+    border-color: #3B3B3B;
+  }
+
+  html:not(.light) .card-title,
+  :root:not(.light) .card-title {
+    color: #F3F2F1;
+  }
+
+  html:not(.light) .chart-footer,
+  :root:not(.light) .chart-footer {
+    border-top-color: #3B3B3B;
+    color: #A19F9D;
+  }
+
+  html:not(.light) .subject-item,
+  :root:not(.light) .subject-item {
+    background: #3B3B3B;
+    border-left-color: #6CB4EE;
+  }
+
+  html:not(.light) .subject-item:hover,
+  :root:not(.light) .subject-item:hover {
+    background: #484644;
+  }
+
+  html:not(.light) .subject-name,
+  :root:not(.light) .subject-name {
+    color: #F3F2F1;
+  }
+
+  html:not(.light) .stat-value,
+  :root:not(.light) .stat-value {
+    color: #F3F2F1;
+  }
+
+  html:not(.light) .stat-label,
+  :root:not(.light) .stat-label {
+    color: #A19F9D;
+  }
 }
 
 /* Responsive Design */

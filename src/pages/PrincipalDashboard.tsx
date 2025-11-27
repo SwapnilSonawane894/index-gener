@@ -1,4 +1,5 @@
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import { GraduationCap, Building2, CheckCircle2, Users } from 'lucide-react';
 import '../styles/Dashboard.css';
 
 const passRateData = [
@@ -80,8 +81,8 @@ export default function PrincipalDashboard() {
       {/* Stats Cards */}
       <div className="stats-grid">
         <div className="stat-card" data-testid="total-students-card">
-          <div className="stat-icon" style={{ background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)' }}>
-            🎓
+          <div className="stat-icon" style={{ background: '#0078D4' }}>
+            <GraduationCap size={24} />
           </div>
           <div className="stat-content">
             <div className="stat-value">1,234</div>
@@ -90,8 +91,8 @@ export default function PrincipalDashboard() {
         </div>
 
         <div className="stat-card" data-testid="departments-card">
-          <div className="stat-icon" style={{ background: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)' }}>
-            🏛️
+          <div className="stat-icon" style={{ background: '#E3008C' }}>
+            <Building2 size={24} />
           </div>
           <div className="stat-content">
             <div className="stat-value">12</div>
@@ -100,8 +101,8 @@ export default function PrincipalDashboard() {
         </div>
 
         <div className="stat-card" data-testid="pass-percentage-card">
-          <div className="stat-icon" style={{ background: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)' }}>
-            ✅
+          <div className="stat-icon" style={{ background: '#00BCF2' }}>
+            <CheckCircle2 size={24} />
           </div>
           <div className="stat-content">
             <div className="stat-value">87.6%</div>
@@ -110,8 +111,8 @@ export default function PrincipalDashboard() {
         </div>
 
         <div className="stat-card" data-testid="faculty-card">
-          <div className="stat-icon" style={{ background: 'linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)' }}>
-            👨‍🏫
+          <div className="stat-icon" style={{ background: '#107C10' }}>
+            <Users size={24} />
           </div>
           <div className="stat-content">
             <div className="stat-value">89</div>

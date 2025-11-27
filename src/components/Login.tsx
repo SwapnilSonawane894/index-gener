@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useAuth } from '../context/AuthContext';
-import { Eye, EyeOff } from 'lucide-react';
+import { Eye, EyeOff, GraduationCap } from 'lucide-react';
 import '../styles/Login.css';
 
 export default function Login() {
@@ -29,7 +29,9 @@ export default function Login() {
     <div className="login-container">
       <div className="login-card">
         <div className="login-header">
-          <div className="logo-icon">🎓</div>
+          <div className="logo-icon">
+            <GraduationCap size={28} />
+          </div>
           <h2>Success Helper</h2>
         </div>
         

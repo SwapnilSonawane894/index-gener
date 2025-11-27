@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Plus, Pencil, Trash2, X } from 'lucide-react';
+import { Plus, Pencil, Trash2, X, Building2 } from 'lucide-react';
 import '../styles/Departments.css';
 
 interface Department {
@@ -110,7 +110,9 @@ export default function Departments() {
               <tr key={dept.id} data-testid={`department-row-${dept.id}`}>
                 <td>
                   <div className="dept-name-cell">
-                    <div className="dept-icon">🏛️</div>
+                    <div className="dept-icon">
+                      <Building2 size={20} />
+                    </div>
                     {dept.name}
                   </div>
                 </td>

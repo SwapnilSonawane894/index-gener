@@ -12,42 +12,45 @@
 
 .departments-title {
   margin: 0 0 4px 0;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 600;
-  color: #1a1a1a;
+  color: #323130;
 }
 
 .departments-subtitle {
   margin: 0;
   font-size: 14px;
-  color: #666;
+  color: #605E5C;
 }
 
 .add-department-btn {
   display: flex;
   align-items: center;
   gap: 8px;
-  padding: 12px 20px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
+  padding: 10px 20px;
+  background: #0078D4;
+  color: #FFFFFF;
   border: none;
-  border-radius: 8px;
+  border-radius: 6px;
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: all 0.15s ease;
 }
 
 .add-department-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+  background: #106EBE;
+}
+
+.add-department-btn:active {
+  background: #005A9E;
 }
 
 .table-container {
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  border: 1px solid #f0f0f0;
+  background: #FFFFFF;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  border: 1px solid #EDEBE9;
   overflow: hidden;
 }
 
@@ -57,33 +60,37 @@
 }
 
 .departments-table thead {
-  background: #f8f9fa;
+  background: #F3F2F1;
 }
 
 .departments-table th {
-  padding: 16px 20px;
+  padding: 12px 16px;
   text-align: left;
   font-size: 13px;
   font-weight: 600;
-  color: #666;
+  color: #323130;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
-  border-bottom: 2px solid #e0e0e0;
+  letter-spacing: 0.3px;
+  border-bottom: 1px solid #EDEBE9;
 }
 
 .departments-table tbody tr {
-  border-bottom: 1px solid #f0f0f0;
-  transition: background 0.2s;
+  border-bottom: 1px solid #EDEBE9;
+  transition: background 0.15s ease;
 }
 
 .departments-table tbody tr:hover {
-  background: #f8f9fa;
+  background: #FAF9F8;
+}
+
+.departments-table tbody tr:last-child {
+  border-bottom: none;
 }
 
 .departments-table td {
-  padding: 16px 20px;
+  padding: 14px 16px;
   font-size: 14px;
-  color: #1a1a1a;
+  color: #323130;
 }
 
 .dept-name-cell {
@@ -94,20 +101,21 @@
 }
 
 .dept-icon {
-  font-size: 20px;
   width: 36px;
   height: 36px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  border-radius: 8px;
+  background: #0078D4;
+  border-radius: 6px;
+  color: #FFFFFF;
+  flex-shrink: 0;
 }
 
 .student-count {
   padding: 6px 12px;
-  background: #e8f0fe;
-  color: #1967d2;
+  background: #E1F5FE;
+  color: #0078D4;
   border-radius: 6px;
   font-weight: 600;
   font-size: 13px;
@@ -127,27 +135,27 @@
   border: none;
   border-radius: 6px;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: all 0.15s ease;
 }
 
 .edit-btn {
-  background: #e8f5e9;
-  color: #2e7d32;
+  background: #DFF6DD;
+  color: #107C10;
+  border: 1px solid #107C10;
 }
 
 .edit-btn:hover {
-  background: #c8e6c9;
-  transform: scale(1.1);
+  background: #C8E6C9;
 }
 
 .delete-btn {
-  background: #ffebee;
-  color: #c62828;
+  background: #FDE7E9;
+  color: #A4262C;
+  border: 1px solid #A4262C;
 }
 
 .delete-btn:hover {
-  background: #ffcdd2;
-  transform: scale(1.1);
+  background: #FFCDD2;
 }
 
 /* Modal Styles */
@@ -157,7 +165,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.4);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -166,16 +174,17 @@
 }
 
 .modal-content {
-  background: white;
-  border-radius: 16px;
+  background: #FFFFFF;
+  border-radius: 12px;
   width: 100%;
   max-width: 500px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  border: 1px solid #EDEBE9;
 }
 
 .modal-header {
-  padding: 24px;
-  border-bottom: 1px solid #f0f0f0;
+  padding: 20px 24px;
+  border-bottom: 1px solid #EDEBE9;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -185,25 +194,25 @@
   margin: 0;
   font-size: 20px;
   font-weight: 600;
-  color: #1a1a1a;
+  color: #323130;
 }
 
 .modal-close-btn {
   background: none;
   border: none;
   cursor: pointer;
-  color: #666;
-  padding: 4px;
+  color: #605E5C;
+  padding: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 6px;
-  transition: all 0.2s;
+  transition: all 0.15s ease;
 }
 
 .modal-close-btn:hover {
-  background: #f0f0f0;
-  color: #1a1a1a;
+  background: #F3F2F1;
+  color: #323130;
 }
 
 .modal-body {
@@ -222,26 +231,32 @@
 .form-field label {
   font-size: 14px;
   font-weight: 500;
-  color: #1a1a1a;
+  color: #323130;
 }
 
 .form-field input {
-  padding: 12px 16px;
-  border: 1px solid #e0e0e0;
-  border-radius: 8px;
+  padding: 10px 12px;
+  border: 1px solid #EDEBE9;
+  border-radius: 6px;
   font-size: 14px;
-  transition: all 0.2s;
+  transition: all 0.15s ease;
   outline: none;
+  background: #FFFFFF;
+  color: #323130;
 }
 
 .form-field input:focus {
-  border-color: #667eea;
-  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+  border-color: #0078D4;
+  box-shadow: 0 0 0 1px #0078D4;
+}
+
+.form-field input:hover {
+  border-color: #C8C6C4;
 }
 
 .modal-footer {
-  padding: 20px 24px;
-  border-top: 1px solid #f0f0f0;
+  padding: 16px 24px;
+  border-top: 1px solid #EDEBE9;
   display: flex;
   gap: 12px;
   justify-content: flex-end;
@@ -250,30 +265,266 @@
 .modal-btn {
   padding: 10px 20px;
   border: none;
-  border-radius: 8px;
+  border-radius: 6px;
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: all 0.15s ease;
 }
 
 .cancel-btn {
-  background: #f0f0f0;
-  color: #666;
+  background: #F3F2F1;
+  color: #323130;
+  border: 1px solid #EDEBE9;
 }
 
 .cancel-btn:hover {
-  background: #e0e0e0;
+  background: #EDEBE9;
 }
 
 .save-btn {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
+  background: #0078D4;
+  color: #FFFFFF;
 }
 
 .save-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+  background: #106EBE;
+}
+
+.save-btn:active {
+  background: #005A9E;
+}
+
+/* Dark Mode - Class-based (manual theme selection) */
+html.dark .departments-title,
+:root.dark .departments-title {
+  color: #F3F2F1;
+}
+
+html.dark .departments-subtitle,
+:root.dark .departments-subtitle {
+  color: #A19F9D;
+}
+
+html.dark .table-container,
+:root.dark .table-container {
+  background: #292929;
+  border-color: #3B3B3B;
+}
+
+html.dark .departments-table thead,
+:root.dark .departments-table thead {
+  background: #3B3B3B;
+}
+
+html.dark .departments-table th,
+:root.dark .departments-table th {
+  color: #F3F2F1;
+  border-bottom-color: #484644;
+}
+
+html.dark .departments-table tbody tr,
+:root.dark .departments-table tbody tr {
+  border-bottom-color: #3B3B3B;
+}
+
+html.dark .departments-table tbody tr:hover,
+:root.dark .departments-table tbody tr:hover {
+  background: #3B3B3B;
+}
+
+html.dark .departments-table td,
+:root.dark .departments-table td {
+  color: #F3F2F1;
+}
+
+html.dark .student-count,
+:root.dark .student-count {
+  background: #1A3A52;
+  color: #6CB4EE;
+}
+
+html.dark .modal-overlay,
+:root.dark .modal-overlay {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+html.dark .modal-content,
+:root.dark .modal-content {
+  background: #292929;
+  border-color: #3B3B3B;
+}
+
+html.dark .modal-header,
+:root.dark .modal-header {
+  border-bottom-color: #3B3B3B;
+}
+
+html.dark .modal-header h3,
+:root.dark .modal-header h3 {
+  color: #F3F2F1;
+}
+
+html.dark .modal-close-btn,
+:root.dark .modal-close-btn {
+  color: #A19F9D;
+}
+
+html.dark .modal-close-btn:hover,
+:root.dark .modal-close-btn:hover {
+  background: #3B3B3B;
+  color: #F3F2F1;
+}
+
+html.dark .form-field label,
+:root.dark .form-field label {
+  color: #F3F2F1;
+}
+
+html.dark .form-field input,
+:root.dark .form-field input {
+  background: #1F1F1F;
+  border-color: #3B3B3B;
+  color: #F3F2F1;
+}
+
+html.dark .form-field input:hover,
+:root.dark .form-field input:hover {
+  border-color: #484644;
+}
+
+html.dark .modal-footer,
+:root.dark .modal-footer {
+  border-top-color: #3B3B3B;
+}
+
+html.dark .cancel-btn,
+:root.dark .cancel-btn {
+  background: #3B3B3B;
+  color: #F3F2F1;
+  border-color: #484644;
+}
+
+html.dark .cancel-btn:hover,
+:root.dark .cancel-btn:hover {
+  background: #484644;
+}
+
+/* Dark Mode - System preference fallback */
+@media (prefers-color-scheme: dark) {
+  html:not(.light) .departments-title,
+  :root:not(.light) .departments-title {
+    color: #F3F2F1;
+  }
+
+  html:not(.light) .departments-subtitle,
+  :root:not(.light) .departments-subtitle {
+    color: #A19F9D;
+  }
+
+  html:not(.light) .table-container,
+  :root:not(.light) .table-container {
+    background: #292929;
+    border-color: #3B3B3B;
+  }
+
+  html:not(.light) .departments-table thead,
+  :root:not(.light) .departments-table thead {
+    background: #3B3B3B;
+  }
+
+  html:not(.light) .departments-table th,
+  :root:not(.light) .departments-table th {
+    color: #F3F2F1;
+    border-bottom-color: #484644;
+  }
+
+  html:not(.light) .departments-table tbody tr,
+  :root:not(.light) .departments-table tbody tr {
+    border-bottom-color: #3B3B3B;
+  }
+
+  html:not(.light) .departments-table tbody tr:hover,
+  :root:not(.light) .departments-table tbody tr:hover {
+    background: #3B3B3B;
+  }
+
+  html:not(.light) .departments-table td,
+  :root:not(.light) .departments-table td {
+    color: #F3F2F1;
+  }
+
+  html:not(.light) .student-count,
+  :root:not(.light) .student-count {
+    background: #1A3A52;
+    color: #6CB4EE;
+  }
+
+  html:not(.light) .modal-overlay,
+  :root:not(.light) .modal-overlay {
+    background: rgba(0, 0, 0, 0.7);
+  }
+
+  html:not(.light) .modal-content,
+  :root:not(.light) .modal-content {
+    background: #292929;
+    border-color: #3B3B3B;
+  }
+
+  html:not(.light) .modal-header,
+  :root:not(.light) .modal-header {
+    border-bottom-color: #3B3B3B;
+  }
+
+  html:not(.light) .modal-header h3,
+  :root:not(.light) .modal-header h3 {
+    color: #F3F2F1;
+  }
+
+  html:not(.light) .modal-close-btn,
+  :root:not(.light) .modal-close-btn {
+    color: #A19F9D;
+  }
+
+  html:not(.light) .modal-close-btn:hover,
+  :root:not(.light) .modal-close-btn:hover {
+    background: #3B3B3B;
+    color: #F3F2F1;
+  }
+
+  html:not(.light) .form-field label,
+  :root:not(.light) .form-field label {
+    color: #F3F2F1;
+  }
+
+  html:not(.light) .form-field input,
+  :root:not(.light) .form-field input {
+    background: #1F1F1F;
+    border-color: #3B3B3B;
+    color: #F3F2F1;
+  }
+
+  html:not(.light) .form-field input:hover,
+  :root:not(.light) .form-field input:hover {
+    border-color: #484644;
+  }
+
+  html:not(.light) .modal-footer,
+  :root:not(.light) .modal-footer {
+    border-top-color: #3B3B3B;
+  }
+
+  html:not(.light) .cancel-btn,
+  :root:not(.light) .cancel-btn {
+    background: #3B3B3B;
+    color: #F3F2F1;
+    border-color: #484644;
+  }
+
+  html:not(.light) .cancel-btn:hover,
+  :root:not(.light) .cancel-btn:hover {
+    background: #484644;
+  }
 }
 
 /* Responsive Design */

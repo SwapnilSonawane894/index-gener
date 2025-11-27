@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect } from 'react';
 import { useAuth } from '../context/AuthContext';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { 
@@ -6,8 +6,8 @@ import {
   Building2, 
   TrendingUp, 
   LogOut, 
-  ChevronLeft, 
-  ChevronRight
+  User,
+  Settings
 } from 'lucide-react';
 import '../styles/Layout.css';
 
@@ -16,10 +16,29 @@ interface LayoutProps {
 }
 
 export default function Layout({ children }: LayoutProps) {
-  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
   const { user, logout } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
+
+  // Apply system theme on mount
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    const applyTheme = (e: MediaQueryList | MediaQueryListEvent) => {
+      if (e.matches) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    };
+    
+    // Apply initial theme
+    applyTheme(mediaQuery);
+    
+    // Listen for system theme changes
+    mediaQuery.addEventListener('change', applyTheme);
+    
+    return () => mediaQuery.removeEventListener('change', applyTheme);
+  }, []);
 
   const handleLogout = () => {
     logout();
@@ -30,12 +49,14 @@ export default function Layout({ children }: LayoutProps) {
     if (user?.role === 'principal') {
       return [
         { icon: LayoutDashboard, label: 'Dashboard', path: '/dashboard' },
-        { icon: Building2, label: 'Departments', path: '/departments' }
+        { icon: Building2, label: 'Departments', path: '/departments' },
+        { icon: Settings, label: 'Settings', path: '/settings' }
       ];
     } else if (user?.role === 'hod') {
       return [
         { icon: LayoutDashboard, label: 'Dashboard', path: '/dashboard' },
-        { icon: TrendingUp, label: 'Success Index', path: '/success-index' }
+        { icon: TrendingUp, label: 'Success', path: '/success-index' },
+        { icon: Settings, label: 'Settings', path: '/settings' }
       ];
     }
     return [];
@@ -43,32 +64,17 @@ export default function Layout({ children }: LayoutProps) {
 
   const menuItems = getMenuItems();
 
-  const getPageTitle = () => {
-    const currentPath = location.pathname;
-    if (currentPath === '/dashboard') return 'Dashboard';
-    if (currentPath === '/departments') return 'Departments';
-    if (currentPath === '/success-index') return 'Success Index';
-    return 'Dashboard';
-  };
-
   return (
     <div className="layout">
       {/* Sidebar */}
-      <aside className={`sidebar ${sidebarCollapsed ? 'collapsed' : ''}`} data-testid="sidebar">
+      <aside className="sidebar" data-testid="sidebar">
         <div className="sidebar-header">
-          <div className="app-branding">
-            <div className="app-icon">🎓</div>
-            {!sidebarCollapsed && <span className="app-name">Success Helper</span>}
+          <div className="user-profile">
+            <div className="user-avatar-large">
+              <User size={32} />
+            </div>
+            <div className="user-name">{user?.name}</div>
           </div>
-          {!sidebarCollapsed && (
-            <button 
-              className="collapse-btn"
-              onClick={() => setSidebarCollapsed(true)}
-              data-testid="collapse-sidebar-button"
-            >
-              <ChevronLeft size={18} />
-            </button>
-          )}
         </div>
 
         <nav className="sidebar-nav">
@@ -82,8 +88,10 @@ export default function Layout({ children }: LayoutProps) {
                 onClick={() => navigate(item.path)}
                 data-testid={`nav-${item.label.toLowerCase().replace(' ', '-')}`}
               >
-                <Icon size={20} />
-                {!sidebarCollapsed && <span>{item.label}</span>}
+                <div className="nav-icon">
+                  <Icon />
+                </div>
+                <span>{item.label}</span>
               </button>
             );
           })}
@@ -95,37 +103,16 @@ export default function Layout({ children }: LayoutProps) {
             onClick={handleLogout}
             data-testid="logout-button"
           >
-            <LogOut size={20} />
-            {!sidebarCollapsed && <span>Logout</span>}
+            <div className="nav-icon">
+              <LogOut />
+            </div>
+            <span>Logout</span>
           </button>
         </div>
-
-        {sidebarCollapsed && (
-          <button 
-            className="expand-btn"
-            onClick={() => setSidebarCollapsed(false)}
-            data-testid="expand-sidebar-button"
-          >
-            <ChevronRight size={18} />
-          </button>
-        )}
       </aside>
 
       {/* Main Content */}
       <main className="main-content">
-        <header className="page-header">
-          <div className="page-title">
-            <h1 data-testid="page-title">{getPageTitle()}</h1>
-          </div>
-          <div className="user-info">
-            <div className="user-details">
-              <div className="user-name">{user?.name}</div>
-              <div className="user-role">{user?.role.toUpperCase()}</div>
-            </div>
-            <div className="user-avatar">{user?.name.charAt(0)}</div>
-          </div>
-        </header>
-
         <div className="page-content" data-testid="page-content">
           {children}
         </div>

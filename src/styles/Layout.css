@@ -7,17 +7,17 @@
 
 /* Sidebar Styles - Microsoft Fluent Design */
 .sidebar {
-  width: 280px;
+  width: 120px;
   background: #FFFFFF;
   border-right: 1px solid #EDEBE9;
   display: flex;
   flex-direction: column;
-  transition: width 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   position: fixed;
   height: 100vh;
   left: 0;
   top: 0;
   z-index: 100;
+  overflow: hidden;
 }
 
 .sidebar::-webkit-scrollbar {
@@ -30,99 +30,105 @@
 
 .sidebar::-webkit-scrollbar-thumb {
   background: #C8C6C4;
-  border-radius: 4px;
+  border-radius: 8px;
 }
 
 .sidebar::-webkit-scrollbar-thumb:hover {
   background: #A19F9D;
 }
 
-.sidebar.collapsed {
-  width: 66px;
-}
-
 .sidebar-header {
-  padding: 17px;
-  border-bottom: 1px solid #EDEBE9;
+  padding: 24px 12px;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  min-height: 64px;
+  justify-content: center;
   flex-shrink: 0;
 }
 
-.app-branding {
+.user-profile {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 12px;
-  overflow: hidden;
+  gap: 8px;
+  width: 100%;
 }
 
-.app-icon {
-  width: 32px;
-  height: 32px;
+.user-avatar-large {
+  width: 56px;
+  height: 56px;
+  background: #0078D4;
+  color: #FFFFFF;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #0078D4;
+  border-radius: 50%;
+  flex-shrink: 0;
 }
 
-.app-name {
-  font-size: 15px;
+.user-profile .user-name {
+  font-size: 14px;
   font-weight: 600;
   color: #323130;
-  white-space: nowrap;
-}
-
-.collapse-btn {
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: #605E5C;
-  padding: 7px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.15s ease;
-  flex-shrink: 0;
-}
-
-.collapse-btn:hover {
-  background: #F3F2F1;
-  color: #323130;
+  text-align: center;
+  word-wrap: break-word;
+  max-width: 100%;
+  line-height: 1.2;
 }
 
 .sidebar-nav {
   flex: 1;
-  padding: 8px;
+  padding: 12px 8px;
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 8px;
   overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .nav-item {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 12px;
-  padding: 10px 12px;
+  justify-content: center;
+  padding: 16px 8px;
   background: none;
   border: none;
   cursor: pointer;
   color: #605E5C;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 400;
-  transition: all 0.15s ease;
-  text-align: left;
+  transition: all 0.2s ease;
+  text-align: center;
   position: relative;
   width: 100%;
-  height: 40px;
+  min-height: auto;
+  border-radius: 6px;
+  gap: 8px;
 }
 
-.sidebar.collapsed .nav-item {
+.nav-icon {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  display: flex;
+  align-items: center;
   justify-content: center;
-  padding: 10px;
-  width: 40px;
+  margin-right: 0;
+  transition: all 0.2s ease;
+}
+
+.nav-icon svg {
+  width: 32px;
+  height: 32px;
+  stroke-width: 1.5;
+}
+
+.nav-item span {
+  white-space: nowrap;
+  line-height: 1.2;
+  transition: all 0.2s ease;
 }
 
 .nav-item:hover {
@@ -131,21 +137,13 @@
 }
 
 .nav-item.active {
-  background: #EFF6FC;
+  background: linear-gradient(135deg, #EFF6FC 0%, #DEECF9 100%);
   color: #0078D4;
-  font-weight: 600;
-}
-
-.nav-item span {
-  flex: 1;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  font-weight: 400;
 }
 
 .sidebar-footer {
   padding: 8px;
-  border-top: 1px solid #EDEBE9;
   flex-shrink: 0;
 }
 
@@ -158,103 +156,15 @@
   color: #A4262C;
 }
 
-.expand-btn {
-  position: absolute;
-  right: -12.5px;
-  top: 28px;
-  width: 24px;
-  height: 24px;
-  background: #FFFFFF;
-  border: 1px solid #EDEBE9;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  color: #605E5C;
-  transition: all 0.15s ease;
-}
-
-.expand-btn:hover {
-  background: #0078D4;
-  color: #FFFFFF;
-  border-color: #0078D4;
-}
-
 /* Main Content Styles */
 .main-content {
   flex: 1;
   display: flex;
   flex-direction: column;
   min-width: 0;
-  margin-left: 280px;
+  margin-left: 120px;
   height: 100vh;
   overflow: hidden;
-  transition: margin-left 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.sidebar.collapsed + .main-content {
-  margin-left: 64px;
-}
-
-.page-header {
-  background: #FFFFFF;
-  padding: 13px 24px;
-  border-bottom: 1px solid #EDEBE9;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  min-height: 64px;
-  flex-shrink: 0;
-}
-
-.page-title {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.page-title h1 {
-  margin: 0;
-  font-size: 20px;
-  font-weight: 600;
-  color: #323130;
-}
-
-.user-info {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.user-avatar {
-  width: 32px;
-  height: 32px;
-  background: #0078D4;
-  color: #FFFFFF;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 600;
-  font-size: 14px;
-  order: 2;
-}
-
-.user-details {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  order: 1;
-}
-
-.user-name {
-  font-size: 14px;
-  font-weight: 600;
-  color: #323130;
-}
-
-.user-role {
-  font-size: 12px;
-  color: #605E5C;
 }
 
 .page-content {
@@ -274,30 +184,141 @@
 
 .page-content::-webkit-scrollbar-thumb {
   background: #C8C6C4;
-  border-radius: 5px;
+  border-radius: 8px;
 }
 
 .page-content::-webkit-scrollbar-thumb:hover {
   background: #A19F9D;
 }
 
-/* Responsive Design */
-@media (max-width: 1200px) {
-  .sidebar:not(.collapsed) {
-    width: 240px;
-  }
-  
-  .main-content {
-    margin-left: 240px;
-  }
-  
-  .page-content {
-    padding: 20px;
-  }
+/* Dark Mode - Class-based (manual theme selection) */
+html.dark .layout,
+:root.dark .layout {
+  background: #1F1F1F;
 }
 
-@media (max-width: 900px) {
-  .page-title h1 {
-    font-size: 18px;
+html.dark .sidebar,
+:root.dark .sidebar {
+  background: #292929;
+  border-right-color: #3B3B3B;
+}
+
+html.dark .sidebar::-webkit-scrollbar-thumb,
+:root.dark .sidebar::-webkit-scrollbar-thumb {
+  background: #484644;
+}
+
+html.dark .sidebar::-webkit-scrollbar-thumb:hover,
+:root.dark .sidebar::-webkit-scrollbar-thumb:hover {
+  background: #605E5C;
+}
+
+html.dark .user-profile .user-name,
+:root.dark .user-profile .user-name {
+  color: #F3F2F1;
+}
+
+html.dark .nav-item,
+:root.dark .nav-item {
+  color: #A19F9D;
+}
+
+html.dark .nav-item:hover,
+:root.dark .nav-item:hover {
+  background: #3B3B3B;
+  color: #F3F2F1;
+}
+
+html.dark .nav-item.active,
+:root.dark .nav-item.active {
+  background: linear-gradient(135deg, #1A3A52 0%, #0F2942 100%);
+  color: #6CB4EE;
+}
+
+html.dark .logout-btn:hover,
+:root.dark .logout-btn:hover {
+  background: #5C2D30;
+  color: #F48771;
+}
+
+html.dark .page-content::-webkit-scrollbar-track,
+:root.dark .page-content::-webkit-scrollbar-track {
+  background: #292929;
+}
+
+html.dark .page-content::-webkit-scrollbar-thumb,
+:root.dark .page-content::-webkit-scrollbar-thumb {
+  background: #484644;
+}
+
+html.dark .page-content::-webkit-scrollbar-thumb:hover,
+:root.dark .page-content::-webkit-scrollbar-thumb:hover {
+  background: #605E5C;
+}
+
+/* Dark Mode - System preference fallback */
+@media (prefers-color-scheme: dark) {
+  html:not(.light) .layout,
+  :root:not(.light) .layout {
+    background: #1F1F1F;
+  }
+
+  html:not(.light) .sidebar,
+  :root:not(.light) .sidebar {
+    background: #292929;
+    border-right-color: #3B3B3B;
+  }
+
+  html:not(.light) .sidebar::-webkit-scrollbar-thumb,
+  :root:not(.light) .sidebar::-webkit-scrollbar-thumb {
+    background: #484644;
+  }
+
+  html:not(.light) .sidebar::-webkit-scrollbar-thumb:hover,
+  :root:not(.light) .sidebar::-webkit-scrollbar-thumb:hover {
+    background: #605E5C;
+  }
+
+  html:not(.light) .user-profile .user-name,
+  :root:not(.light) .user-profile .user-name {
+    color: #F3F2F1;
+  }
+
+  html:not(.light) .nav-item,
+  :root:not(.light) .nav-item {
+    color: #A19F9D;
+  }
+
+  html:not(.light) .nav-item:hover,
+  :root:not(.light) .nav-item:hover {
+    background: #3B3B3B;
+    color: #F3F2F1;
+  }
+
+  html:not(.light) .nav-item.active,
+  :root:not(.light) .nav-item.active {
+    background: linear-gradient(135deg, #1A3A52 0%, #0F2942 100%);
+    color: #6CB4EE;
+  }
+
+  html:not(.light) .logout-btn:hover,
+  :root:not(.light) .logout-btn:hover {
+    background: #5C2D30;
+    color: #F48771;
+  }
+
+  html:not(.light) .page-content::-webkit-scrollbar-track,
+  :root:not(.light) .page-content::-webkit-scrollbar-track {
+    background: #292929;
+  }
+
+  html:not(.light) .page-content::-webkit-scrollbar-thumb,
+  :root:not(.light) .page-content::-webkit-scrollbar-thumb {
+    background: #484644;
+  }
+
+  html:not(.light) .page-content::-webkit-scrollbar-thumb:hover,
+  :root:not(.light) .page-content::-webkit-scrollbar-thumb:hover {
+    background: #605E5C;
   }
 }

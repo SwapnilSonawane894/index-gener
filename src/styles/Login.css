@@ -3,14 +3,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: #FAF9F8;
   padding: 20px;
 }
 
 .login-card {
-  background: white;
-  border-radius: 16px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  background: #FFFFFF;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  border: 1px solid #EDEBE9;
   padding: 40px;
   width: 100%;
   max-width: 420px;
@@ -24,20 +25,20 @@
 }
 
 .logo-icon {
-  font-size: 32px;
-  width: 50px;
-  height: 50px;
+  width: 48px;
+  height: 48px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  border-radius: 12px;
+  background: #0078D4;
+  border-radius: 8px;
+  color: #FFFFFF;
 }
 
 .login-header h2 {
   margin: 0;
   font-size: 20px;
-  color: #1a1a1a;
+  color: #323130;
   font-weight: 600;
 }
 
@@ -48,13 +49,13 @@
 .welcome-section h1 {
   margin: 0 0 8px 0;
   font-size: 28px;
-  color: #1a1a1a;
+  color: #323130;
   font-weight: 700;
 }
 
 .welcome-section p {
   margin: 0;
-  color: #666;
+  color: #605E5C;
   font-size: 14px;
 }
 
@@ -73,21 +74,27 @@
 .form-group label {
   font-size: 14px;
   font-weight: 500;
-  color: #1a1a1a;
+  color: #323130;
 }
 
 .form-group input {
   padding: 12px 16px;
-  border: 1px solid #e0e0e0;
-  border-radius: 8px;
+  border: 1px solid #EDEBE9;
+  border-radius: 6px;
   font-size: 14px;
-  transition: all 0.2s;
+  transition: all 0.15s ease;
   outline: none;
+  background: #FFFFFF;
+  color: #323130;
 }
 
 .form-group input:focus {
-  border-color: #667eea;
-  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+  border-color: #0078D4;
+  box-shadow: 0 0 0 1px #0078D4;
+}
+
+.form-group input:hover {
+  border-color: #C8C6C4;
 }
 
 .password-input-wrapper {
@@ -107,45 +114,47 @@
   background: none;
   border: none;
   cursor: pointer;
-  color: #666;
+  color: #605E5C;
   padding: 4px;
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 6px;
+  transition: all 0.15s ease;
 }
 
 .password-toggle:hover {
-  color: #667eea;
+  color: #323130;
+  background: #F3F2F1;
 }
 
 .error-message {
   padding: 12px;
-  background: #fee;
-  border: 1px solid #fcc;
-  border-radius: 8px;
-  color: #c00;
+  background: #FDE7E9;
+  border: 1px solid #A4262C;
+  border-radius: 6px;
+  color: #A4262C;
   font-size: 13px;
 }
 
 .login-button {
   padding: 14px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
+  background: #0078D4;
+  color: #FFFFFF;
   border: none;
-  border-radius: 8px;
+  border-radius: 6px;
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition: all 0.15s ease;
 }
 
 .login-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+  background: #106EBE;
 }
 
 .login-button:active {
-  transform: translateY(0);
+  background: #005A9E;
 }
 
 .login-footer {
@@ -154,11 +163,11 @@
   justify-content: center;
   gap: 12px;
   font-size: 13px;
-  color: #666;
+  color: #605E5C;
 }
 
 .login-footer a {
-  color: #667eea;
+  color: #0078D4;
   text-decoration: none;
 }
 
@@ -167,5 +176,147 @@
 }
 
 .login-footer span {
-  color: #ccc;
+  color: #C8C6C4;
+}
+
+/* Dark Mode - Class-based (manual theme selection) */
+html.dark .login-container,
+:root.dark .login-container {
+  background: #1F1F1F;
+}
+
+html.dark .login-card,
+:root.dark .login-card {
+  background: #292929;
+  border-color: #3B3B3B;
+}
+
+html.dark .login-header h2,
+:root.dark .login-header h2 {
+  color: #F3F2F1;
+}
+
+html.dark .welcome-section h1,
+:root.dark .welcome-section h1 {
+  color: #F3F2F1;
+}
+
+html.dark .welcome-section p,
+:root.dark .welcome-section p {
+  color: #A19F9D;
+}
+
+html.dark .form-group label,
+:root.dark .form-group label {
+  color: #F3F2F1;
+}
+
+html.dark .form-group input,
+:root.dark .form-group input {
+  background: #1F1F1F;
+  border-color: #3B3B3B;
+  color: #F3F2F1;
+}
+
+html.dark .form-group input:hover,
+:root.dark .form-group input:hover {
+  border-color: #484644;
+}
+
+html.dark .password-toggle,
+:root.dark .password-toggle {
+  color: #A19F9D;
+}
+
+html.dark .password-toggle:hover,
+:root.dark .password-toggle:hover {
+  color: #F3F2F1;
+  background: #3B3B3B;
+}
+
+html.dark .login-footer,
+:root.dark .login-footer {
+  color: #A19F9D;
+}
+
+html.dark .login-footer a,
+:root.dark .login-footer a {
+  color: #6CB4EE;
+}
+
+html.dark .login-footer span,
+:root.dark .login-footer span {
+  color: #484644;
+}
+
+/* Dark Mode - System preference fallback */
+@media (prefers-color-scheme: dark) {
+  html:not(.light) .login-container,
+  :root:not(.light) .login-container {
+    background: #1F1F1F;
+  }
+
+  html:not(.light) .login-card,
+  :root:not(.light) .login-card {
+    background: #292929;
+    border-color: #3B3B3B;
+  }
+
+  html:not(.light) .login-header h2,
+  :root:not(.light) .login-header h2 {
+    color: #F3F2F1;
+  }
+
+  html:not(.light) .welcome-section h1,
+  :root:not(.light) .welcome-section h1 {
+    color: #F3F2F1;
+  }
+
+  html:not(.light) .welcome-section p,
+  :root:not(.light) .welcome-section p {
+    color: #A19F9D;
+  }
+
+  html:not(.light) .form-group label,
+  :root:not(.light) .form-group label {
+    color: #F3F2F1;
+  }
+
+  html:not(.light) .form-group input,
+  :root:not(.light) .form-group input {
+    background: #1F1F1F;
+    border-color: #3B3B3B;
+    color: #F3F2F1;
+  }
+
+  html:not(.light) .form-group input:hover,
+  :root:not(.light) .form-group input:hover {
+    border-color: #484644;
+  }
+
+  html:not(.light) .password-toggle,
+  :root:not(.light) .password-toggle {
+    color: #A19F9D;
+  }
+
+  html:not(.light) .password-toggle:hover,
+  :root:not(.light) .password-toggle:hover {
+    color: #F3F2F1;
+    background: #3B3B3B;
+  }
+
+  html:not(.light) .login-footer,
+  :root:not(.light) .login-footer {
+    color: #A19F9D;
+  }
+
+  html:not(.light) .login-footer a,
+  :root:not(.light) .login-footer a {
+    color: #6CB4EE;
+  }
+
+  html:not(.light) .login-footer span,
+  :root:not(.light) .login-footer span {
+    color: #484644;
+  }
 }
