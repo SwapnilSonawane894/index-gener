@@ -28,7 +28,22 @@ function ProtectedRoute({ children, allowedRole }: { children: React.ReactNode; 
 }
 
 function AppRoutes() {
-  const { user } = useAuth();
+  const { user, loading } = useAuth();
+
+  // Show loading spinner while checking auth status
+  if (loading) {
+    return (
+      <div style={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: '100vh',
+        fontSize: '18px'
+      }}>
+        Loading...
+      </div>
+    );
+  }
 
   if (!user) {
     return (

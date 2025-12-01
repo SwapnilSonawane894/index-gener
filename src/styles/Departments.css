@@ -120,6 +120,18 @@
   font-size: 13px;
 }
 
+.abbr-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  background: var(--color-secondary-lighter, #e0f2fe);
+  color: var(--color-secondary, #0369a1);
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  border: 1px solid var(--color-secondary-light, #7dd3fc);
+}
+
 .action-buttons {
   display: flex;
   gap: 8px;

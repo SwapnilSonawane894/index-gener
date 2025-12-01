@@ -3,7 +3,8 @@ import { useAuth } from '../context/AuthContext';
 import Button from '../components/Button';
 import Input from '../components/Input';
 import Label from '../components/Label';
-import { Eye, EyeOff } from 'lucide-react';
+import { Eye, EyeOff, RefreshCw } from 'lucide-react';
+import { adminAPI, handleAPIError } from '../services/api';
 import '../styles/Settings.css';
 
 export default function Settings() {
@@ -15,6 +16,21 @@ export default function Settings() {
   const [showNewPassword, setShowNewPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [theme, setTheme] = useState<'system' | 'light' | 'dark'>('system');
+  const [resetLoading, setResetLoading] = useState(false);
+  const [resetMessage, setResetMessage] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
+
+  const handleResetAllHodConfigs = async () => {
+    setResetLoading(true);
+    setResetMessage(null);
+    try {
+      const result = await adminAPI.resetAllHodConfigs();
+      setResetMessage({ type: 'success', text: result.message });
+    } catch (error) {
+      setResetMessage({ type: 'error', text: handleAPIError(error) });
+    } finally {
+      setResetLoading(false);
+    }
+  };
 
   const handlePasswordUpdate = (e: React.FormEvent) => {
     e.preventDefault();
@@ -138,6 +154,37 @@ export default function Settings() {
           </Button>
         </form>
       </div>
+
+      {/* Admin Tools - Only visible to admin users */}
+      {user?.role === 'admin' && (
+        <div className="settings-section">
+          <h2 className="settings-section-title">Admin Tools</h2>
+          <div className="admin-tools">
+            <div className="admin-tool-item">
+              <div className="admin-tool-info">
+                <h3 className="admin-tool-title">Reset All HOD Configurations</h3>
+                <p className="admin-tool-description">
+                  Reset all HOD user configurations to the default semester format. 
+                  Use this if HOD users encounter processing errors due to outdated configurations.
+                </p>
+              </div>
+              <Button 
+                onClick={handleResetAllHodConfigs} 
+                disabled={resetLoading}
+                className="admin-tool-btn"
+              >
+                <RefreshCw size={16} className={resetLoading ? 'spinning' : ''} />
+                {resetLoading ? 'Resetting...' : 'Reset All Configs'}
+              </Button>
+            </div>
+            {resetMessage && (
+              <div className={`admin-message ${resetMessage.type}`}>
+                {resetMessage.text}
+              </div>
+            )}
+          </div>
+        </div>
+      )}
 
       {/* Theme Settings */}
       <div className="settings-section">

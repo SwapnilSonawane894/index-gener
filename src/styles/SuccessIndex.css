@@ -99,6 +99,29 @@
   border-color: var(--color-primary);
 }
 
+.form-hint {
+  font-size: 12px;
+  color: var(--color-text-tertiary);
+  margin: 4px 0 0 0;
+}
+
+.semester-info {
+  padding: 12px 16px;
+  background: var(--color-bg-secondary);
+  border-radius: 6px;
+  border: 1px solid var(--color-border-primary);
+}
+
+.semester-info-text {
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+.semester-info-text strong {
+  color: var(--color-text-primary);
+}
+
 .form-input::placeholder {
   color: var(--color-text-disabled);
 }
@@ -544,6 +567,28 @@
 
 .confirm-button:active {
   background: var(--color-secondary-active);
+}
+
+/* Message Boxes */
+.message-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.error-message {
+  background: #fee2e2;
+  color: #dc2626;
+  border: 1px solid #fecaca;
+}
+
+.success-message {
+  background: #dcfce7;
+  color: #16a34a;
+  border: 1px solid #bbf7d0;
 }
 
 /* Action Footer */

@@ -8,9 +8,10 @@ export default function Login() {
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
   const { login } = useAuth();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError('');
     
@@ -19,9 +20,12 @@ export default function Login() {
       return;
     }
 
-    const success = login(username, password);
-    if (!success) {
-      setError('Invalid credentials. Try admin/admin123 or hod/hod123');
+    setLoading(true);
+    const result = await login(username, password);
+    setLoading(false);
+    
+    if (!result.success) {
+      setError(result.error || 'Login failed. Please try again.');
     }
   };
 
@@ -71,8 +75,13 @@ export default function Login() {
 
           {error && <div className="error-message" data-testid="login-error-message">{error}</div>}
 
-          <button type="submit" className="login-button" data-testid="login-submit-button">
-            Sign In
+          <button 
+            type="submit" 
+            className="login-button" 
+            data-testid="login-submit-button"
+            disabled={loading}
+          >
+            {loading ? 'Signing In...' : 'Sign In'}
           </button>
 
           <div className="login-footer">

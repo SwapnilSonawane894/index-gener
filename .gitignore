@@ -8,6 +8,13 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
+target
+.venv
+.env
+.env.*.local
+.terraform
+.terraform.lock.hcl
+bin/
 dist
 dist-ssr
 *.local
