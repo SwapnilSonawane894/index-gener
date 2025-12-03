@@ -4,7 +4,7 @@ import Button from '../components/Button';
 import Input from '../components/Input';
 import Label from '../components/Label';
 import { Eye, EyeOff, RefreshCw } from 'lucide-react';
-import { adminAPI, handleAPIError } from '../services/api';
+import { adminAPI,authAPI, handleAPIError } from '../services/api';
 import '../styles/Settings.css';
 
 export default function Settings() {
@@ -18,6 +18,7 @@ export default function Settings() {
   const [theme, setTheme] = useState<'system' | 'light' | 'dark'>('system');
   const [resetLoading, setResetLoading] = useState(false);
   const [resetMessage, setResetMessage] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
+  const [passwordLoading, setPasswordLoading] = useState(false);
 
   const handleResetAllHodConfigs = async () => {
     setResetLoading(true);
@@ -32,25 +33,41 @@ export default function Settings() {
     }
   };
 
-  const handlePasswordUpdate = (e: React.FormEvent) => {
+  const handlePasswordUpdate = async (e: React.FormEvent) => {
     e.preventDefault();
     
     if (!currentPassword || !newPassword || !confirmPassword) {
+      alert("Please fill in all fields");
       return;
     }
     
     if (newPassword !== confirmPassword) {
+      alert("New passwords do not match");
       return;
     }
     
     if (newPassword.length < 6) {
+      alert("Password must be at least 6 characters");
       return;
     }
-    
-    // Simulate password update - no alert shown
-    setCurrentPassword('');
-    setNewPassword('');
-    setConfirmPassword('');
+
+    try {
+      setPasswordLoading(true);
+      
+      // CALL THE API HERE
+      await authAPI.updatePassword(currentPassword, newPassword);
+      
+      alert("Password updated successfully!");
+      
+      // Clear fields
+      setCurrentPassword('');
+      setNewPassword('');
+      setConfirmPassword('');
+    } catch (err) {
+      alert(handleAPIError(err));
+    } finally {
+      setPasswordLoading(false);
+    }
   };
 
   const handleThemeChange = (newTheme: 'system' | 'light' | 'dark') => {
@@ -149,9 +166,9 @@ export default function Settings() {
             </div>
           </div>
           
-          <Button type="submit" className="update-password-btn">
-            Update Password
-          </Button>
+         <Button type="submit" className="update-password-btn" disabled={passwordLoading}>
+           {passwordLoading ? 'Updating...' : 'Update Password'}
+         </Button>
         </form>
       </div>
 

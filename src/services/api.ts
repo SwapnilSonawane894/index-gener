@@ -79,6 +79,14 @@ export const authAPI = {
     const response: AxiosResponse<User> = await api.get('/api/me');
     return response.data;
   },
+  
+  async updatePassword(currentPassword: string, newPassword: string): Promise<{ success: boolean; message: string }> {
+    const response = await api.put('/api/me/password', {
+      current_password: currentPassword,
+      new_password: newPassword
+    });
+    return response.data;
+  },
 
   logout() {
     localStorage.removeItem('access_token');
@@ -134,7 +142,8 @@ export const processingAPI = {
     batchYear?: number,
     successIndexName?: string,
     batchName?: string,
-    previousIndexFile?: File
+    previousIndexFile?: File,
+    maxMarks?: number
   ): Promise<Blob> {
     const formData = new FormData();
     
@@ -161,6 +170,10 @@ export const processingAPI = {
     
     if (previousIndexFile) {
       formData.append('previous_index', previousIndexFile);
+    }
+
+    if (maxMarks !== undefined) {
+      formData.append('max_marks', maxMarks.toString());
     }
 
     const response = await api.post('/api/process', formData, {
@@ -211,4 +224,4 @@ export const handleAPIError = (error: any): string => {
   return 'An unexpected error occurred';
 };
 
-export default api;
+export default api; 
