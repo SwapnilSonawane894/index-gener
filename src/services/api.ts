@@ -224,4 +224,29 @@ export const handleAPIError = (error: any): string => {
   return 'An unexpected error occurred';
 };
 
+export const apiTool = {
+  async generateReport(
+    file: File,
+    yearType: string,
+    yearLabel: string,
+    sem1: string,
+    sem2: string
+  ): Promise<Blob> {
+    const formData = new FormData();
+    formData.append('result_file', file);
+    formData.append('year_type', yearType);
+    formData.append('year_label', yearLabel);
+    formData.append('sem1_name', sem1);
+    formData.append('sem2_name', sem2);
+
+    const response = await api.post('/api/generate-api-report', formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data',
+      },
+      responseType: 'blob',
+    });
+    return response.data;
+  }
+};
+
 export default api; 
