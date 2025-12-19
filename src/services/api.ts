@@ -231,7 +231,8 @@ export const apiTool = {
     yearType: string,    // FY, SY, TY
     yearLabel: string,   // 2024-25
     sem1Header: string,  // e.g. "SEM V (W-24)"
-    sem2Header: string   // e.g. "SEM VI (S-25)"
+    sem2Header: string,  // e.g. "SEM VI (S-25)"
+    semesterNo: number   // Added: e.g. 5 or 6
   ): Promise<Blob> {
     const formData = new FormData();
     formData.append('student_file', studentFile);
@@ -240,6 +241,7 @@ export const apiTool = {
     formData.append('year_label', yearLabel);
     formData.append('sem1_header', sem1Header);
     formData.append('sem2_header', sem2Header);
+    formData.append('semester_no', semesterNo.toString()); // Send semester number
 
     const response = await api.post('/api/generate-api-report', formData, {
       headers: {

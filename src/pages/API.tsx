@@ -142,20 +142,20 @@ export default function API() {
       const baseYear = parseInt(year);
       const config = YEAR_TYPE_CONFIG[selectedYearType];
       
-      // Generate Headers dynamically: "SEM V (W-24)" and "SEM VI (S-25)"
       const sem1Header = getSemesterHeader(config.romanLabels[0], false, baseYear, selectedYearType);
       const sem2Header = getSemesterHeader(config.romanLabels[1], true, baseYear, selectedYearType);
       
-      // Display year label like "2024-25"
       const displayYearLabel = calculateDisplayYear(baseYear, selectedYearType);
 
+      // Pass selectedSemester (number) to the API
       const blob = await apiTool.generateReport(
         studentFile, 
         resultFile, 
         selectedYearType, 
         displayYearLabel, 
         sem1Header, 
-        sem2Header
+        sem2Header,
+        selectedSemester 
       );
       
       downloadFile(blob, `API_${selectedYearType}_${displayYearLabel}.xlsx`);
@@ -168,6 +168,7 @@ export default function API() {
       setLoading(false);
     }
   };
+
 
   const handleReset = () => {
     setYear('');
