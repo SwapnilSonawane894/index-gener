@@ -226,18 +226,20 @@ export const handleAPIError = (error: any): string => {
 
 export const apiTool = {
   async generateReport(
-    file: File,
-    yearType: string,
-    yearLabel: string,
-    sem1: string,
-    sem2: string
+    studentFile: File,
+    resultFile: File,
+    yearType: string,    // FY, SY, TY
+    yearLabel: string,   // 2024-25
+    sem1Header: string,  // e.g. "SEM V (W-24)"
+    sem2Header: string   // e.g. "SEM VI (S-25)"
   ): Promise<Blob> {
     const formData = new FormData();
-    formData.append('result_file', file);
+    formData.append('student_file', studentFile);
+    formData.append('result_file', resultFile);
     formData.append('year_type', yearType);
     formData.append('year_label', yearLabel);
-    formData.append('sem1_name', sem1);
-    formData.append('sem2_name', sem2);
+    formData.append('sem1_header', sem1Header);
+    formData.append('sem2_header', sem2Header);
 
     const response = await api.post('/api/generate-api-report', formData, {
       headers: {
